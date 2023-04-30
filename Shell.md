@@ -2371,7 +2371,6 @@ root
 
 ```shell
 实现 字符串的完全相等需要使用 ==
-
 字符串需要使用双引号
 != 表示不等于
 ```
@@ -2443,7 +2442,7 @@ if语句：
 
 实战案例:
 显示管理员用户姓名
-[root@qfedu ~]# cat /etc/passwd | awk -F":" '{if($3==0) {print $1 " is administrator"}}'
+[root@Asuka ~]# cat /etc/passwd | awk -F":" '{if($3==0) {print $1 " is administrator"}}'
 
 
 这个命令的作用是查找 `/etc/passwd` 文件中用户的UID是否为0，如果为0，就输出该用户的用户名和 `is administrator`。
@@ -2459,7 +2458,7 @@ if语句：
 
 
 统计系统用户数量
-[root@qfedu ~]# cat /etc/passwd | awk -F":" '{if($3>=0 && $3<=1000){i++}} END{print i}'
+[root@Asuka ~]# cat /etc/passwd | awk -F":" '{if($3>=0 && $3<=1000){i++}} END{print i}'
 
 
 这条命令的作用是统计系统中 UID（用户 ID）的值介于 0 和 1000 之间的用户数量。
@@ -2486,7 +2485,7 @@ if语句：
 ```shell
 在awk使用for循环
 每行打印两遍
-[root@qfedu ~]# awk '{for(i=1;i<=2;i++) {print $0}}' /etc/passwd
+[root@Asuka ~]# awk '{for(i=1;i<=2;i++) {print $0}}' /etc/passwd
 root:x:0:0:root:/root:/bin/bash
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
@@ -2636,7 +2635,7 @@ uniq：去重
 ## 安装
 
 ```shell
-[root@qfedu ~] yum -y install expect
+[root@Asuka ~] yum -y install expect
 ```
 
 ## 语法
@@ -2664,7 +2663,7 @@ uniq：去重
 
 ```shell
 普通操作
-[root@qfedu script]# vim expect01.sh
+[root@Asuka script]# vim expect01.sh
 #!/usr/bin/expect
 spawn ssh root@192.168.246.115
 
@@ -2673,8 +2672,8 @@ expect {
         "password:" { send "1\r" };
 }
 interact
-[root@qfedu script]# chmod +x expect01.sh
-[root@qfedu script]# ./expect01.sh
+[root@Asuka script]# chmod +x expect01.sh
+[root@Asuka script]# ./expect01.sh
 spawn ssh root@192.168.246.115
 root@192.168.246.115's password: 
 Last login: Fri Aug 28 16:57:09 2019
